@@ -1,0 +1,33 @@
+
+server:
+  port: 0
+  host: 192.168.43.184
+#  ssl:
+#    key-alias: products
+#    key-password: password
+#    key-store-password: password
+#    key-store-type: pkcs12
+#    key-store: classpath:products.pfx
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:5000/eureka
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+spring:
+  application:
+    name: SECURITY
+  datasource:
+    password: wadza
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/ecommerce-security
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+      use-new-id-generator-mappings: true
+    generate-ddl: true
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
